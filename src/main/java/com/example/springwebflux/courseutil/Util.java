@@ -33,6 +33,14 @@ public class Util {
         }
     }
 
+    public static void sleepMillis(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static Subscriber<Object> subscriber() {
         return new DefaultSubscriber();
     }
