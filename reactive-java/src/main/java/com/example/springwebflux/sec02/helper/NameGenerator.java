@@ -3,9 +3,6 @@ package com.example.springwebflux.sec02.helper;
 import com.example.springwebflux.courseutil.Util;
 import reactor.core.publisher.Flux;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class NameGenerator {
 
 //    public static List<String> getNames(int count) {

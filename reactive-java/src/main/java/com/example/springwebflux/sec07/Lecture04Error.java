@@ -4,9 +4,6 @@ import com.example.springwebflux.courseutil.Util;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Lecture04Error {
     public static void main(String[] args) {
 
