@@ -6,6 +6,7 @@
     <modules>
         <module>reactive-java</module>
         <module>webflux</module>
+        <module>reactive-java-training</module>
     </modules>
 
     <groupId>com.example</groupId>
