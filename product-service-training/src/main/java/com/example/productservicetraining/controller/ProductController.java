@@ -3,6 +3,7 @@ package com.example.productservicetraining.controller;
 import com.example.productservicetraining.dto.ProductDto;
 import com.example.productservicetraining.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -31,9 +32,11 @@ public class ProductController {
     }
 
     @PutMapping("{id}")
-    public Mono<ProductDto> updateProduct(@PathVariable String id,
-                                          @RequestBody Mono<ProductDto> dto) {
-        return productService.updateProduct(id, dto);
+    public Mono<ResponseEntity<ProductDto>> updateProduct(@PathVariable String id,
+                                                          @RequestBody Mono<ProductDto> dto) {
+        return productService.updateProduct(id, dto)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("{id}")
